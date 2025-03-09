@@ -70,19 +70,9 @@ router.put("/:id", authenticate, isAdmin, upload.single("photo_profile"), async 
         fs.unlinkSync(oldPhotoPath); //  Supprimer l'ancienne image
       }
     }
-  
-        // Mettre à jour le Worker avec les nouvelles données
-        //worker.nom = nom;
-        //worker.prenom = prenom;
-        //worker.postnom = postnom;
-        //worker.email = email;
-        //worker.sexe = sexe;
-        //worker.phone = phone;
-        //worker.categorie = categorie;
-        //worker.photo_profile = newPhoto;
         console.log(newPhoto)
         await Worker.update(id, nom, postnom, prenom, email,sexe, phone, categorie, newPhoto);
-
+        
   
         res.json({ message: "Worker mis à jour avec succès", worker });
   
