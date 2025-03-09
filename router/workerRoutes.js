@@ -80,7 +80,7 @@ router.put("/:id", authenticate, isAdmin, upload.single("photo_profile"), async 
         //worker.phone = phone;
         //worker.categorie = categorie;
         //worker.photo_profile = newPhoto;
-        console.log(newPhoto);
+        console.log(newPhoto)
         await Worker.update(id, nom, postnom, prenom, email,sexe, phone, categorie, newPhoto);
 
   
