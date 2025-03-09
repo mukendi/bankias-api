@@ -19,10 +19,10 @@ const Worker = {
     return result.rows[0];
   },
 
-  update: async (id, nom, prenom, postnom, sexe, phone, categorie, photo_profile) => {
+  update: async (id, nom, prenom, postnom, email, sexe, phone, categorie, photo_profile) => {
     const result = await pool.query(
-      "UPDATE workers SET nom=$1, prenom=$2, postnom=$3, sexe=$4, phone=$5, categorie=$6, photo_profile=$7 WHERE id=$8 RETURNING *",
-      [nom, prenom, postnom, sexe, phone, categorie, photo_profile, id]
+      "UPDATE workers SET nom=$1, prenom=$2, postnom=$3, email=$4, sexe=$5, phone=$6, categorie=$7, photo_profile=$8 WHERE id=$9 RETURNING *",
+      [nom, prenom, postnom, email,  sexe, phone, categorie, photo_profile, id]
     );
     return result.rows[0];
   },
